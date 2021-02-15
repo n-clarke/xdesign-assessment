@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Ben Chonzie",
+    "height": 1.1,
+    "hill_category": "MUN",
+    "grid_reference": "OL47W 368W 379W"
+  },
+  {
+    "name": "Ben Vorlich",
+    "height": 1.2,
+    "hill_category": "MUN",
+    "grid_reference": "OL46N OL47W 365N 368W"
+  },
+  {
+    "name": "Stuc a' Chroin",
+    "height": 1.2,
+    "hill_category": "MUN",
+    "grid_reference": "OL46N OL47W 365N 368W"
+  },
+  {
+    "name": "Ben Lomond",
+    "height": 1.3,
+    "hill_category": "MUN",
+    "grid_reference": "OL39S 364S"
+  },
+  {
+    "name": "Ben More",
+    "height": 1.3,
+    "hill_category": "MUN",
+    "grid_reference": "OL46N 365N"
+  },
+  {
+    "name": "Stob Binnein",
+    "height": 1.3,
+    "hill_category": "MUN",
+    "grid_reference": "OL46N 365N"
+  },
+  {
+    "name": "Stob Binnein - Stob Coire an Lochain",
+    "height": 1.3,
+    "hill_category": "TOP",
+    "grid_reference": "OL46N 365N"
+  },
+  {
+    "name": "Stob Binnein - Meall na Dige",
+    "height": 1.3,
+    "hill_category": "TOP",
+    "grid_reference": "OL46N 365N"
+  },
+  {
+    "name": "Cruach Ardrain",
+    "height": 1.3,
+    "hill_category": "MUN",
+    "grid_reference": "OL39N 364N"
+  },
+  {
+    "name": "Cruach Ardrain - Stob Garbh",
+    "height": 1.3,
+    "hill_category": "TOP",
+    "grid_reference": "OL39N 364N"
+  },
+  {
+    "name": "An Caisteal",
+    "height": 1.3,
+    "hill_category": "MUN",
+    "grid_reference": "OL39N 364N"
+  },
+  {
+    "name": "Beinn Tulaichean",
+    "height": 1.3,
+    "hill_category": "MUN",
+    "grid_reference": "OL46N 365N"
+  },
+  {
+    "name": "Beinn a' Chroin East Top [Beinn a' Chroin]",
+    "height": 1.3,
+    "hill_category": "MUN",
+    "grid_reference": "OL39N 364N"
+  },
+  {
+    "name": "Beinn a' Chroin West Top",
+    "height": 1.3,
+    "hill_category": "TOP",
+    "grid_reference": "OL39N 364N"
+  },
+  {
+    "name": "Beinn Chabhair",
+    "height": 1.3,
+    "hill_category": "MUN",
+    "grid_reference": "OL39N 364N"
+  },
+  {
+    "name": "Ben Lui [Beinn Laoigh]",
+    "height": 1.4,
+    "hill_category": "MUN",
+    "grid_reference": "OL39N 364N 377E"
+  },
+  {
+    "name": "Ben Oss",
+    "height": 1.4,
+    "hill_category": "MUN",
+    "grid_reference": "OL39N 364N 377E"
+  },
+  {
+    "name": "Beinn Dubhchraig",
+    "height": 1.4,
+    "hill_category": "MUN",
+    "grid_reference": "OL39N 364N 377E"
+  },
+  {
+    "name": "Beinn a' Chleibh",
+    "height": 1.4,
+    "hill_category": "MUN",
+    "grid_reference": "OL39N 364N 377E"
+  },
+  {
+    "name": "Ben Vorlich",
+    "height": 1.4,
+    "hill_category": "MUN",
+    "grid_reference": "OL39N OL39S 364N 364S"
+  },
+  {
+    "name": "Ben Vorlich North Top",
+    "height": 1.4,
+    "hill_category": "TOP",
+    "grid_reference": "OL39N 364N"
+  },
+  {
+    "name": "Beinn Ime",
+    "height": 1.4,
+    "hill_category": "MUN",
+    "grid_reference": "OL39S 364S"
+  },
+  {
+    "name": "Ben Vane",
+    "height": 1.4,
+    "hill_category": "MUN",
+    "grid_reference": "OL39S 364S"
+  },
+  {
+    "name": "Beinn Narnain",
+    "height": 1.4,
+    "hill_category": "MUN",
+    "grid_reference": "OL39S 364S"
+  },
+  {
+    "name": "Beinn Bhuidhe",
+    "height": 1.4,
+    "hill_category": "MUN",
+    "grid_reference": "OL39N 364N"
+  }
+]

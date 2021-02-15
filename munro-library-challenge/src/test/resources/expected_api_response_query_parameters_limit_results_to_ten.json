@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Ben Chonzie",
+    "height": 1.1,
+    "hill_category": "MUN",
+    "grid_reference": "OL47W 368W 379W"
+  },
+  {
+    "name": "Ben Vorlich",
+    "height": 1.2,
+    "hill_category": "MUN",
+    "grid_reference": "OL46N OL47W 365N 368W"
+  },
+  {
+    "name": "Stuc a' Chroin",
+    "height": 1.2,
+    "hill_category": "MUN",
+    "grid_reference": "OL46N OL47W 365N 368W"
+  },
+  {
+    "name": "Ben Lomond",
+    "height": 1.3,
+    "hill_category": "MUN",
+    "grid_reference": "OL39S 364S"
+  },
+  {
+    "name": "Ben More",
+    "height": 1.3,
+    "hill_category": "MUN",
+    "grid_reference": "OL46N 365N"
+  },
+  {
+    "name": "Stob Binnein",
+    "height": 1.3,
+    "hill_category": "MUN",
+    "grid_reference": "OL46N 365N"
+  },
+  {
+    "name": "Stob Binnein - Stob Coire an Lochain",
+    "height": 1.3,
+    "hill_category": "TOP",
+    "grid_reference": "OL46N 365N"
+  },
+  {
+    "name": "Stob Binnein - Meall na Dige",
+    "height": 1.3,
+    "hill_category": "TOP",
+    "grid_reference": "OL46N 365N"
+  },
+  {
+    "name": "Cruach Ardrain",
+    "height": 1.3,
+    "hill_category": "MUN",
+    "grid_reference": "OL39N 364N"
+  },
+  {
+    "name": "Cruach Ardrain - Stob Garbh",
+    "height": 1.3,
+    "hill_category": "TOP",
+    "grid_reference": "OL39N 364N"
+  }
+]
