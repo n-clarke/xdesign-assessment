@@ -22,6 +22,5 @@ public class Constants {
     public static final String NULL = "null";
     public static final String COMMA = ",";
     public static final String BLANK = "";
-    public static final String SINGLE_APOSTROPHE = "'";
 
 }
