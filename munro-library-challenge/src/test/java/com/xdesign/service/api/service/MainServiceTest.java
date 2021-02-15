@@ -21,13 +21,8 @@ import static com.xdesign.service.api.test.utils.DataFactory.createHillDataFromS
 @DisplayName("Performing a Unit Test for MainService")
 public class MainServiceTest {
 
-    //@InjectMocks
-    private MainService mainService = new MainService();;
-
-    @Mock
-    private static final Gson gson = new Gson();
-
     public static final String FILE_SRC_EXPECTED_RESPONSE_NO_QUERY_PARAMETERS = "expected_api_response_no_query_parameters.json";
+    ;
     public static final String FILE_SRC_EXPECTED_RESPONSE_QUERY_PARAMETERS_CATEGORY_TOP = "expected_api_response_query_parameters_category_top.json";
     public static final String FILE_SRC_EXPECTED_RESPONSE_QUERY_PARAMETERS_CATEGORY_MUN = "expected_api_response_query_parameters_category_mun.json";
     public static final String FILE_SRC_EXPECTED_RESPONSE_QUERY_PARAMETERS_CATEGORY_EITHER = "expected_api_response_query_parameters_category_either.json";
@@ -43,7 +38,10 @@ public class MainServiceTest {
     public static final String FILE_SRC_EXPECTED_RESPONSE_QUERY_PARAMETERS_MIN_HEIGHT_OF_TWO = "expected_api_response_query_parameters_filter_by_min_height_of_two.json";
     public static final String FILE_SRC_EXPECTED_RESPONSE_QUERY_PARAMETERS_MIN_HEIGHT_OF_TEN = "expected_api_response_query_parameters_filter_by_min_height_of_ten.json";
     public static final String FILE_SRC_EXPECTED_RESPONSE_QUERY_PARAMETERS_MIN_HEIGHT_OF_SEVENTEEN_POINT_ONE = "expected_api_response_query_parameters_filter_by_min_height_of_seventeen_point_one.json";
-
+    @Mock
+    private static final Gson gson = new Gson();
+    //@InjectMocks
+    private MainService mainService = new MainService();
 
     @Before
     public void setUp() {

@@ -9,65 +9,65 @@ import java.util.List;
 
 public class DataFactory {
 
-    private static final String FILE_SRC_EXPECTED_RESPONSE_NO_PARAMETERS = "expected_api_response_no_query_parameters.json";
     /**
-     * todo : description
+     * Sets MDC Value for Filter Hill Category
      *
-     * @param hillCategory
+     * @param hillCategory for a given category (value="MUN" or "TOP" or "EITHER")
      */
     public static void setMDCValueFilterHillCategory(String hillCategory) {
         MDC.put(Constants.PARAMETER_FILTER_HILL_CATEGORY, String.valueOf(hillCategory));
     }
 
     /**
-     * todo : description
+     * Sets MDC Value for Sort By Height
      *
-     * @param sortByHeight
+     * @param sortByHeight for a order (value="ASC" or "DESC")
      */
     public static void setMDCValueSortByHeight(String sortByHeight) {
         MDC.put(Constants.PARAMETER_SORT_BY_HEIGHT, String.valueOf(sortByHeight));
     }
 
     /**
-     * todo : description
+     * Sets MDC Value for Sort By Name
      *
-     * @param sortByName
+     * @param sortByName for a order (value="ASC" or "DESC")
      */
     public static void setMDCValueSortByName(String sortByName) {
         MDC.put(Constants.PARAMETER_SORT_BY_NAME, String.valueOf(sortByName));
     }
 
     /**
-     * todo : description
+     * Sets MDC Value for Limit Results
      *
-     * @param limit
+     * @param limit for a given limit of shown results
      */
     public static void setMDCValueLimit(int limit) {
         MDC.put(Constants.PARAMETER_LIMIT_RESULTS, String.valueOf(limit));
     }
 
     /**
-     * todo : description
+     * Sets MDC Value for Filter Min Height
      *
-     * @param minHeight
+     * @param minHeight value for the min height
      */
     public static void setMDCValueFilterMinHeight(double minHeight) {
         MDC.put(Constants.PARAMETER_FILTER_MIN_HEIGHT, String.valueOf(minHeight));
     }
 
     /**
-     * todo : description
+     * Sets MDC Value for Filter Max Height
      *
-     * @param maxHeight
+     * @param maxHeight value for the max height
      */
     public static void setMDCValueFilterMaxHeight(double maxHeight) {
         MDC.put(Constants.PARAMETER_FILTER_MAX_HEIGHT, String.valueOf(maxHeight));
     }
 
     /**
-     * todo : description
+     * Sets MDC Value for Filter Height
      *
-     * @param maxHeight
+     * @param minHeight value for the min height
+     * @param maxHeight value for the max height
      */
     public static void setMDCValueFilterHeight(double minHeight, double maxHeight) {
         setMDCValueFilterMinHeight(minHeight);
@@ -75,30 +75,30 @@ public class DataFactory {
     }
 
     /**
-     * todo : description
+     * Sets MDC Value for All Query Parameters
      *
-     * @param filterHillCategory
-     * @param sortByHeight
-     * @param sortByName
-     * @param limitResults
-     * @param filterMinHeight
-     * @param filterMaxHeight
+     * @param hillCategory for a given category (value="MUN" or "TOP" or "EITHER")
+     * @param sortByHeight for a order (value="ASC" or "DESC")
+     * @param sortByName   for a order (value="ASC" or "DESC")
+     * @param limit        for a given limit of shown results
+     * @param minHeight    value for the min height
+     * @param maxHeight    value for the max height
      */
-    public static void setAllMDCValues(String filterHillCategory, String sortByHeight, String sortByName,
-                                    int limitResults, double filterMinHeight, double filterMaxHeight) {
-        MDC.put(Constants.PARAMETER_FILTER_HILL_CATEGORY, String.valueOf(filterHillCategory));
+    public static void setAllMDCValues(String hillCategory, String sortByHeight, String sortByName,
+                                       int limit, double minHeight, double maxHeight) {
+        MDC.put(Constants.PARAMETER_FILTER_HILL_CATEGORY, String.valueOf(hillCategory));
         MDC.put(Constants.PARAMETER_SORT_BY_HEIGHT, String.valueOf(sortByHeight));
         MDC.put(Constants.PARAMETER_SORT_BY_NAME, String.valueOf(sortByName));
-        MDC.put(Constants.PARAMETER_LIMIT_RESULTS, String.valueOf(limitResults));
-        MDC.put(Constants.PARAMETER_FILTER_MIN_HEIGHT, String.valueOf(filterMinHeight));
-        MDC.put(Constants.PARAMETER_FILTER_MAX_HEIGHT, String.valueOf(filterMaxHeight));
+        MDC.put(Constants.PARAMETER_LIMIT_RESULTS, String.valueOf(limit));
+        MDC.put(Constants.PARAMETER_FILTER_MIN_HEIGHT, String.valueOf(minHeight));
+        MDC.put(Constants.PARAMETER_FILTER_MAX_HEIGHT, String.valueOf(maxHeight));
     }
 
     /**
-     * todo : description
+     * Creates a Hill Data Object from JSON File
      *
-     * @param jsonFile
-     * @return
+     * @param jsonFile for a given json file
+     * @return {@linkplain List<HillData>}
      */
     public static List<HillData> createHillDataFromJSON(String jsonFile) {
         String readJSONResponseFile = FileReaderUtil.readJSONResponseFromFile(jsonFile);
@@ -107,16 +107,15 @@ public class DataFactory {
     }
 
     /**
-     * todo : description
+     * Creates a Hill Data Object from a given String
      *
-     * @param response
-     * @return
+     * @param response for a given response
+     * @return {@linkplain List<HillData>}
      */
     public static List<HillData> createHillDataFromString(String response) {
         return JsonParserUtils.fromJson(response, new TypeReference<List<HillData>>() {
         });
     }
-
 
 
 }

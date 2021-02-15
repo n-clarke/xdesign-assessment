@@ -10,9 +10,9 @@ import java.io.InputStreamReader;
 public class FileReaderUtil {
 
     /**
-     * todo : description
+     * A method to read a json response from a file
      *
-     * @param jsonFile
+     * @param jsonFile for a given JSON file
      * @return {@linkplain String}
      */
     public static String readJSONResponseFromFile(String jsonFile) {
@@ -24,7 +24,7 @@ public class FileReaderUtil {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 
             String line;
-            while((line = bufferedReader.readLine()) != null) {
+            while ((line = bufferedReader.readLine()) != null) {
                 jsonStringBuilder.append(line);
             }
         } catch (IOException e) {
