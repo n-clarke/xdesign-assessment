@@ -2,6 +2,7 @@ package com.xdesign.service.api.service;
 
 import com.google.gson.Gson;
 import com.xdesign.service.api.constants.Constants;
+import com.xdesign.service.api.constants.HillCategory;
 import com.xdesign.service.api.model.HillData;
 import com.xdesign.service.api.test.utils.DataFactory;
 import org.junit.Assert;
@@ -22,7 +23,6 @@ import static com.xdesign.service.api.test.utils.DataFactory.createHillDataFromS
 public class MainServiceTest {
 
     public static final String FILE_SRC_EXPECTED_RESPONSE_NO_QUERY_PARAMETERS = "expected_api_response_no_query_parameters.json";
-    ;
     public static final String FILE_SRC_EXPECTED_RESPONSE_QUERY_PARAMETERS_CATEGORY_TOP = "expected_api_response_query_parameters_category_top.json";
     public static final String FILE_SRC_EXPECTED_RESPONSE_QUERY_PARAMETERS_CATEGORY_MUN = "expected_api_response_query_parameters_category_mun.json";
     public static final String FILE_SRC_EXPECTED_RESPONSE_QUERY_PARAMETERS_CATEGORY_EITHER = "expected_api_response_query_parameters_category_either.json";
@@ -38,9 +38,10 @@ public class MainServiceTest {
     public static final String FILE_SRC_EXPECTED_RESPONSE_QUERY_PARAMETERS_MIN_HEIGHT_OF_TWO = "expected_api_response_query_parameters_filter_by_min_height_of_two.json";
     public static final String FILE_SRC_EXPECTED_RESPONSE_QUERY_PARAMETERS_MIN_HEIGHT_OF_TEN = "expected_api_response_query_parameters_filter_by_min_height_of_ten.json";
     public static final String FILE_SRC_EXPECTED_RESPONSE_QUERY_PARAMETERS_MIN_HEIGHT_OF_SEVENTEEN_POINT_ONE = "expected_api_response_query_parameters_filter_by_min_height_of_seventeen_point_one.json";
+
     @Mock
     private static final Gson gson = new Gson();
-    //@InjectMocks
+
     private MainService mainService = new MainService();
 
     @Before
@@ -52,7 +53,7 @@ public class MainServiceTest {
     @BeforeEach
     public void beforeEach() {
         // Default STATE
-        DataFactory.setAllMDCValues("either", "", "", 603, 0, 100000000);
+        DataFactory.setAllMDCValues(HillCategory.EITHER.toString(), Constants.BLANK, Constants.BLANK, 603, 0, 100000000);
     }
 
     @Nested
@@ -67,7 +68,7 @@ public class MainServiceTest {
             @DisplayName("Then Return Full Response")
             @Tag("Validation")
             void thenReturnFullResponse() {
-                DataFactory.setMDCValueFilterHillCategory("either");
+                DataFactory.setMDCValueFilterHillCategory(HillCategory.EITHER.toString());
 
                 ResponseEntity<String> actualResponse = mainService.getResponse();
 
@@ -88,7 +89,7 @@ public class MainServiceTest {
             @DisplayName("Then Return Full Response using 'MUN' hill category")
             @Tag("Validation")
             void thenReturnFullResponseUsingCategoryMUN() {
-                DataFactory.setMDCValueFilterHillCategory("MUN");
+                DataFactory.setMDCValueFilterHillCategory(HillCategory.MUN.toString());
 
                 ResponseEntity<String> actualResponse = mainService.getResponse();
 
@@ -104,7 +105,7 @@ public class MainServiceTest {
             @DisplayName("Then Return Full Response using 'top' hill category")
             @Tag("Validation")
             void thenReturnFullResponseUsingCategoryTOP() {
-                DataFactory.setMDCValueFilterHillCategory("top");
+                DataFactory.setMDCValueFilterHillCategory(HillCategory.TOP.toString());
 
                 ResponseEntity<String> actualResponse = mainService.getResponse();
 
@@ -120,7 +121,7 @@ public class MainServiceTest {
             @DisplayName("Then Return Full Response using 'either' hill category")
             @Tag("Validation")
             void thenReturnFullResponseUsingCategoryEITHER() {
-                DataFactory.setMDCValueFilterHillCategory("either");
+                DataFactory.setMDCValueFilterHillCategory(HillCategory.EITHER.toString());
 
                 ResponseEntity<String> actualResponse = mainService.getResponse();
 
@@ -280,7 +281,6 @@ public class MainServiceTest {
                 Assert.assertEquals(expectedHillData, actualHillData);
             }
 
-
             @Test
             @DisplayName("Then Return Results Under 17.1")
             @Tag("Validation")
@@ -334,7 +334,6 @@ public class MainServiceTest {
                 Assert.assertEquals(expectedHillData, actualHillData);
             }
 
-
             @Test
             @DisplayName("Then Return Results Above 17.1")
             @Tag("Validation")
@@ -352,6 +351,5 @@ public class MainServiceTest {
             }
         }
     }
-
 
 }
