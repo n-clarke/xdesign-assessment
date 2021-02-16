@@ -53,7 +53,7 @@ public class MainServiceTest {
     @BeforeEach
     public void beforeEach() {
         // Default STATE
-        DataFactory.setAllMDCValues(HillCategory.EITHER.toString(), Constants.BLANK, Constants.BLANK, 603, 0, 100000000);
+        DataFactory.setAllMDCValues(HillCategory.EITHER.toString(), Constants.BLANK, Constants.BLANK, 602, 0, 602);
     }
 
     @Nested

@@ -2,7 +2,9 @@ package com.xdesign.service.api.service;
 
 import com.google.gson.Gson;
 import com.xdesign.service.api.constants.Constants;
+import com.xdesign.service.api.constants.ErrorConstants;
 import com.xdesign.service.api.constants.HillCategory;
+import com.xdesign.service.api.exception.ResponseException;
 import com.xdesign.service.api.model.HillData;
 import com.xdesign.service.api.model.MunroModel;
 import org.slf4j.MDC;
@@ -48,18 +50,18 @@ public class MainService {
 
         if (filterHillCategory != null) {
             HashSet<String> hillCategories = getHillCategoryEnums();
-            // todo : review contains
+
             if (hillCategories.contains(filterHillCategory.toUpperCase())) {
                 List<HillData> hillDataList = new ArrayList<>();
                 for (HillData hillData : munroData.getItems()) {
-                    if (!hillData.getHillCategory().equals(Constants.BLANK) && (hillData.getHillCategory().equals(filterHillCategory.toUpperCase()) || filterHillCategory.toUpperCase().equals(HillCategory.EITHER.toString()))) {
+                    if (!hillData.getHillCategory().equals(Constants.BLANK) && (hillData.getHillCategory().equalsIgnoreCase(filterHillCategory.toUpperCase()) || filterHillCategory.equalsIgnoreCase(HillCategory.EITHER.toString()))) {
                         hillDataList.add(hillData);
                     }
 
                     munroData.setItems(hillDataList);
                 }
             } else {
-                // todo : log error
+                throw new ResponseException(ErrorConstants.INVALID_QUERY_PARAM);
             }
         }
     }
@@ -90,13 +92,11 @@ public class MainService {
 
         if (isHeightParamActive) {
             if (minHeight > maxHeight) {
-                // todo : log error
-                // max height is less than the minimum height
+                throw new ResponseException(ErrorConstants.INVALID_QUERY_PARAM_HEIGHT_COMBINATION);
             }
 
             List<HillData> hillDataList = new ArrayList<>();
 
-            // todo : Param : minHeight && maxHeight
             for (HillData hillData : munroData.getItems()) {
                 boolean isSmallerEqualToMaxHeight = hillData.getHeight() <= maxHeight;
                 boolean isGreaterEqualToMinHeight = hillData.getHeight() >= minHeight;
@@ -119,7 +119,7 @@ public class MainService {
      * @param compareById for a given Comparator<HillData> object selection
      */
     private static void sortMunroData(String mdcValue, MunroModel munroData, Comparator<HillData> compareById) {
-        if (!mdcValue.equals(Constants.NULL)) {
+        if (!mdcValue.equals(Constants.NULL) && !mdcValue.equals(Constants.BLANK)) {
             if (mdcValue.toLowerCase().equals(Constants.ASC)) {
                 // asc
                 munroData.getItems().sort(compareById);
@@ -127,7 +127,7 @@ public class MainService {
                 // desc
                 munroData.getItems().sort(compareById.reversed());
             } else {
-                // todo : log error
+                throw new ResponseException(ErrorConstants.INVALID_QUERY_PARAM_SORTING);
             }
         }
     }
@@ -164,13 +164,12 @@ public class MainService {
      * @param munroData for a given MunroModel
      */
     private static void limitResults(MunroModel munroData) {
-        // todo errors 0, -1, Greater than total records
         String limitResults = MDC.get(Constants.PARAMETER_LIMIT_RESULTS);
 
         if (limitResults != null && !limitResults.equals(Constants.NULL)) {
             int limitResultsMDCValue = Integer.parseInt(limitResults) - 1;
 
-            if (limitResultsMDCValue < munroData.getItems().size()) {
+            if (limitResultsMDCValue <= munroData.getItems().size()) {
                 List<HillData> hillDataList = new ArrayList<>();
 
                 for (int i = 0; i <= limitResultsMDCValue; i++) {
@@ -178,8 +177,8 @@ public class MainService {
                 }
 
                 munroData.setItems(hillDataList);
-            } else {
-                // todo log error ???
+            } else if (limitResultsMDCValue < 1) {
+                throw new ResponseException(ErrorConstants.INVALID_QUERY_PARAM_MIN_LIMIT);
             }
         }
     }

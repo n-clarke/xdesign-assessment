@@ -2,10 +2,8 @@ package com.xdesign.service.api.constants;
 
 public class ErrorConstants {
 
-    public static final String LOGIC_FAILURE_MESSAGE = "An error occurred while processing downstream response";
-    public static final String MISSING_ = "Service.get.VALUE.missing.error";
-    public static final String INVALID_ = "Service.get.VALUE.invalid.error";
-    public static final String NO_VALUE_FOUND = "Service.no.VALUE.found.in.LOCATION";
-    public static final String UNEXPECTED_ERROR_MESSAGE = "Request failed due to an unexpected error";
-
+    public static final String INVALID_QUERY_PARAM = "Invalid Query Parameter";
+    public static final String INVALID_QUERY_PARAM_MIN_LIMIT = INVALID_QUERY_PARAM + "value must be greater than 0 records.";
+    public static final String INVALID_QUERY_PARAM_SORTING = INVALID_QUERY_PARAM + "Sort by value must either be 'asc' or 'desc' regardless of case sensitivity.";
+    public static final String INVALID_QUERY_PARAM_HEIGHT_COMBINATION = INVALID_QUERY_PARAM + "'s max height is less than the minimum height";
 }
